@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Langdurige Gedragsverandering – Quiz</title>
+  <title>De 10 principes van coaching naar langdurige leefstijlverandering</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── CSS Custom Properties (from style.css) ─────────────── */
     :root {
       --color-oker:        #D4A017;
       --color-oker-light:  #E8C060;
@@ -25,14 +24,11 @@
       --font-body:         'Source Sans 3', 'Segoe UI', sans-serif;
       --shadow-sm:         0 2px 6px rgba(13,31,60,.15);
       --shadow-md:         0 6px 20px rgba(13,31,60,.28);
-      --shadow-lg:         0 16px 48px rgba(13,31,60,.38);
-      --transition:        0.25s ease;
-      --radius-md:         10px;
+      --shadow-lg:         0 20px 56px rgba(13,31,60,.42);
       --radius-lg:         18px;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { font-size: 16px; scroll-behavior: smooth; }
 
     body {
@@ -43,79 +39,85 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 4rem;
+      padding: 2.5rem 1.25rem 5rem;
       background-image:
-        radial-gradient(ellipse at 20% 0%, rgba(212,160,23,.18) 0%, transparent 55%),
-        radial-gradient(ellipse at 80% 100%, rgba(30,64,128,.45) 0%, transparent 60%);
+        radial-gradient(ellipse at 15% 0%,   rgba(212,160,23,.16) 0%, transparent 52%),
+        radial-gradient(ellipse at 85% 100%, rgba(30,64,128,.5)   0%, transparent 58%),
+        radial-gradient(ellipse at 50% 50%,  rgba(22,50,96,.3)    0%, transparent 70%);
     }
 
-    /* ── Header ─────────────────────────────────────────────── */
+    /* ────────────────── HEADER ────────────────── */
     .quiz-header {
       text-align: center;
-      max-width: 720px;
-      margin-bottom: 2.5rem;
-      animation: fadeDown .6s ease both;
+      max-width: 780px;
+      margin-bottom: 2.8rem;
+      animation: fadeDown .65s ease both;
     }
-
     .quiz-header .eyebrow {
       display: inline-block;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--color-oker);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.65rem;
     }
-
     .quiz-header h1 {
-      font-size: clamp(1.45rem, 3.5vw, 2.1rem);
+      font-size: clamp(1.35rem, 3.2vw, 2rem);
       font-weight: 700;
       line-height: 1.3;
       color: var(--color-wit);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
-
     .quiz-header .hint {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 300;
       color: var(--color-grijs);
     }
-
-    /* Oker rule under header */
     .quiz-header::after {
       content: '';
       display: block;
-      width: 60px;
+      width: 56px;
       height: 4px;
       background: var(--color-oker);
       border-radius: 99px;
-      margin: 1rem auto 0;
+      margin: 1.1rem auto 0;
     }
 
-    /* ── Doors Grid ──────────────────────────────────────────── */
+    /* ────────────────── GRID ────────────────── */
     .doors-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
       width: 100%;
-      max-width: 860px;
+      max-width: 1100px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
+      .doors-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
       .doors-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Single Door Scene ───────────────────────────────────── */
+    /* ────────────────── DOOR SCENE ────────────────── */
     .door-scene {
-      perspective: 1200px;
-      height: 340px;
-      animation: fadeUp .6s ease both;
+      perspective: 1400px;
+      height: 380px;
+      animation: fadeUp .55s ease both;
     }
 
-    .door-scene:nth-child(1) { animation-delay: .1s; }
-    .door-scene:nth-child(2) { animation-delay: .2s; }
-    .door-scene:nth-child(3) { animation-delay: .3s; }
-    .door-scene:nth-child(4) { animation-delay: .4s; }
+    /* staggered entrance */
+    .door-scene:nth-child(1)  { animation-delay: .05s; }
+    .door-scene:nth-child(2)  { animation-delay: .10s; }
+    .door-scene:nth-child(3)  { animation-delay: .15s; }
+    .door-scene:nth-child(4)  { animation-delay: .20s; }
+    .door-scene:nth-child(5)  { animation-delay: .25s; }
+    .door-scene:nth-child(6)  { animation-delay: .30s; }
+    .door-scene:nth-child(7)  { animation-delay: .35s; }
+    .door-scene:nth-child(8)  { animation-delay: .40s; }
+    .door-scene:nth-child(9)  { animation-delay: .45s; }
+    .door-scene:nth-child(10) { animation-delay: .50s; }
 
     .door-wrapper {
       position: relative;
@@ -124,65 +126,60 @@
       transform-style: preserve-3d;
     }
 
-    /* ── Door Front (the clickable door) ─────────────────────── */
+    /* ────────────────── FRONT ────────────────── */
     .door-front {
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, var(--color-oker-light) 0%, var(--color-oker) 40%, var(--color-oker-dark) 100%);
+      background: linear-gradient(165deg, var(--color-oker-light) 0%, var(--color-oker) 45%, var(--color-oker-dark) 100%);
       border-radius: var(--radius-lg);
-      border: 3px solid rgba(255,255,255,.12);
-      box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,.25);
+      border: 3px solid rgba(255,255,255,.13);
+      box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255,255,255,.3);
       cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.75rem;
-      padding: 1.5rem;
+      gap: 0.7rem;
+      padding: 1.2rem 1rem;
       text-align: center;
       backface-visibility: hidden;
       transform-origin: left center;
-      transition: transform .9s cubic-bezier(.4,0,.2,1), box-shadow .3s ease;
+      transition: transform .85s cubic-bezier(.4,0,.2,1), box-shadow .25s ease;
       z-index: 2;
       user-select: none;
     }
 
-    /* Door panel details */
+    /* inset panel grooves */
     .door-front::before,
     .door-front::after {
       content: '';
       position: absolute;
-      border: 2px solid rgba(168,124,12,.45);
+      border: 2px solid rgba(168,124,12,.4);
       border-radius: 6px;
       pointer-events: none;
     }
-    .door-front::before {
-      inset: 14px 14px calc(50% + 10px) 14px;
-    }
-    .door-front::after {
-      inset: calc(50% + 10px) 14px 14px 14px;
-    }
+    .door-front::before { inset: 12px 12px calc(50% + 8px) 12px; }
+    .door-front::after  { inset: calc(50% + 8px) 12px 12px 12px; }
 
-    /* Doorknob */
     .door-knob {
       position: absolute;
-      right: 18px;
+      right: 14px;
       top: 50%;
       transform: translateY(-50%);
-      width: 13px;
-      height: 13px;
+      width: 11px;
+      height: 11px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, #fffbe0, var(--color-blauw-mid));
-      box-shadow: 0 2px 6px rgba(0,0,0,.4);
+      box-shadow: 0 2px 5px rgba(0,0,0,.45);
     }
 
-    .door-letter {
-      width: 44px;
-      height: 44px;
+    .door-number {
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: var(--color-blauw);
       color: var(--color-oker);
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -192,50 +189,47 @@
     }
 
     .door-label {
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--color-zwart);
       line-height: 1.35;
-      max-width: 22ch;
+      max-width: 18ch;
     }
 
     .door-cta {
-      font-size: 0.75rem;
+      font-size: 0.66rem;
       font-weight: 600;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--color-blauw-mid);
-      margin-top: 0.25rem;
-      opacity: .75;
+      opacity: .7;
     }
 
-    /* Hover glow */
     .door-front:hover:not(.is-open) {
       box-shadow: var(--shadow-lg), 0 0 0 3px var(--color-oker-light);
     }
 
-    /* Open state: swing left */
+    /* open = swing left */
     .door-front.is-open {
-      transform: rotateY(-115deg);
-      box-shadow: -8px 8px 30px rgba(0,0,0,.4);
+      transform: rotateY(-118deg);
+      box-shadow: -10px 10px 32px rgba(0,0,0,.45);
       cursor: default;
     }
 
-    /* ── Door Back / Reveal panel ─────────────────────────────── */
+    /* ────────────────── BACK / REVEAL ────────────────── */
     .door-back {
       position: absolute;
       inset: 0;
       background: var(--color-wit);
       color: var(--color-zwart);
       border-radius: var(--radius-lg);
-      border: 3px solid rgba(212,160,23,.3);
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+      border: 3px solid rgba(212,160,23,.35);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .3s ease .55s;
+      transition: opacity .3s ease .5s;
       z-index: 1;
     }
 
@@ -244,80 +238,97 @@
       pointer-events: auto;
     }
 
-    /* Correct / wrong banners */
-    .door-scene.correct .door-back { border-color: #2d7a4a; }
-    .door-scene.wrong   .door-back { border-color: #b02828; }
-
-    .door-back__image {
-      width: 100%;
-      height: 145px;
-      object-fit: cover;
-      display: block;
-      background: var(--color-grijs-licht);
-      flex-shrink: 0;
-    }
-
-    /* SVG illustration placeholder */
+    /* ── Illustration area ── */
     .door-back__illus {
       width: 100%;
-      height: 145px;
+      height: 150px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      background: var(--color-grijs-licht);
     }
 
+    .door-back__illus svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── Text content ── */
     .door-back__body {
-      padding: 0.85rem 1rem 0.9rem;
+      padding: 0.75rem 0.85rem 0.7rem;
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.28rem;
       overflow: hidden;
     }
 
-    .door-back__tag {
-      font-size: 0.68rem;
+    .door-back__num {
+      font-size: 0.62rem;
       font-weight: 700;
-      letter-spacing: .12em;
+      letter-spacing: .13em;
       text-transform: uppercase;
-      padding: .2em .6em;
-      border-radius: 99px;
-      align-self: flex-start;
+      color: var(--color-oker-dark);
     }
 
-    .tag--correct { background: #d8f0e4; color: #1a5e35; }
-    .tag--wrong   { background: #f8dede; color: #8b1a1a; }
-
     .door-back__title {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--color-blauw);
-      line-height: 1.3;
+      line-height: 1.25;
     }
 
     .door-back__text {
-      font-size: 0.8rem;
-      font-weight: 400;
+      font-size: 0.75rem;
       line-height: 1.5;
-      color: #3a3a3a;
+      color: #3a3530;
+      flex: 1;
+      overflow: hidden;
     }
 
-    /* ── Reset button ─────────────────────────────────────────── */
+    /* Close button */
+    .door-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--color-blauw);
+      color: var(--color-oker);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-sm);
+      transition: background .2s, transform .15s;
+      z-index: 10;
+      line-height: 1;
+    }
+    .door-close:hover {
+      background: var(--color-oker);
+      color: var(--color-blauw);
+      transform: scale(1.12);
+    }
+
+    /* ────────────────── RESET ────────────────── */
     .reset-wrap {
       margin-top: 2rem;
       text-align: center;
-      animation: fadeUp .6s .5s ease both;
+      animation: fadeUp .6s .6s ease both;
     }
-
     .btn-reset {
       font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 700;
-      letter-spacing: .06em;
+      letter-spacing: .07em;
       text-transform: uppercase;
-      padding: .7em 2.2em;
+      padding: .65em 2em;
       border: 2px solid var(--color-oker);
       background: transparent;
       color: var(--color-oker);
@@ -331,258 +342,401 @@
       transform: translateY(-2px);
     }
 
-    /* ── Animations ───────────────────────────────────────────── */
+    /* ────────────────── ANIMATIONS ────────────────── */
     @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(-18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
+      from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── Result toast ─────────────────────────────────────────── */
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(120%);
-      background: var(--color-blauw-mid);
-      border: 2px solid var(--color-oker);
-      color: var(--color-wit);
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: .75em 1.8em;
-      border-radius: 99px;
-      box-shadow: var(--shadow-lg);
-      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
-      z-index: 100;
-      white-space: nowrap;
-    }
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <!-- ── Header ─────────────────────────────────────────────── -->
   <header class="quiz-header">
-    <span class="eyebrow">Gedragsverandering · Quiz</span>
-    <h1>Wat is typisch voor langdurige gedragsverandering?</h1>
-    <p class="hint">Klik op een deur om het antwoord te ontdekken.</p>
+    <span class="eyebrow">Leefstijlcoaching · Verdieping</span>
+    <h1>De 10 principes van coaching naar langdurige leefstijlverandering</h1>
+    <p class="hint">Klik op een deur om het principe te ontdekken. Klik opnieuw om de deur te sluiten.</p>
   </header>
 
-  <!-- ── Doors ──────────────────────────────────────────────── -->
   <div class="doors-grid" id="doorsGrid">
 
-    <!-- Door A -->
-    <div class="door-scene" id="scene-a">
+    <!-- ── 1 ── -->
+    <div class="door-scene" id="scene-1">
       <div class="door-wrapper">
-        <div class="door-front" id="door-a" onclick="openDoor('a')">
-          <div class="door-letter">A</div>
-          <div class="door-label">Gedragsverandering duurt langer dan 12 maanden</div>
-          <div class="door-cta">↩ Klik om te openen</div>
+        <div class="door-front" id="door-1" onclick="toggleDoor('1')">
+          <div class="door-number">1</div>
+          <div class="door-label">Motivatie staat centraal</div>
+          <div class="door-cta">↩ Open</div>
           <div class="door-knob"></div>
         </div>
-        <div class="door-back" id="back-a">
+        <div class="door-back" id="back-1">
+          <button class="door-close" onclick="closeDoor('1')" title="Sluiten">✕</button>
           <div class="door-back__illus">
-            <!-- Calendar / time illustration -->
-            <svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg" width="260" height="145">
-              <rect width="260" height="145" fill="#EDE9E0"/>
-              <!-- calendar body -->
-              <rect x="55" y="20" width="150" height="110" rx="10" fill="#fff" stroke="#C8C4B8" stroke-width="2"/>
-              <rect x="55" y="20" width="150" height="34" rx="10" fill="#0D1F3C"/>
-              <rect x="55" y="40" width="150" height="14" rx="0" fill="#0D1F3C"/>
-              <text x="130" y="41" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="13" font-weight="700" fill="#D4A017">12 maanden?</text>
-              <!-- grid dots -->
-              <circle cx="85"  cy="75" r="4" fill="#C8C4B8"/>
-              <circle cx="110" cy="75" r="4" fill="#C8C4B8"/>
-              <circle cx="135" cy="75" r="4" fill="#C8C4B8"/>
-              <circle cx="160" cy="75" r="4" fill="#C8C4B8"/>
-              <circle cx="185" cy="75" r="4" fill="#C8C4B8"/>
-              <circle cx="85"  cy="100" r="4" fill="#C8C4B8"/>
-              <circle cx="110" cy="100" r="4" fill="#C8C4B8"/>
-              <circle cx="135" cy="100" r="4" fill="#C8C4B8"/>
-              <circle cx="160" cy="100" r="4" fill="#C8C4B8"/>
-              <!-- cross over it -->
-              <line x1="60" y1="55" x2="200" y2="135" stroke="#b02828" stroke-width="4" stroke-linecap="round" opacity=".6"/>
-              <line x1="200" y1="55" x2="60" y2="135" stroke="#b02828" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- flame -->
+              <path d="M100 130 C 60 130 40 105 40 85 C 40 65 60 60 70 45 C 75 70 85 72 85 55 C 95 70 100 60 100 45 C 110 65 120 68 125 50 C 135 70 160 75 160 95 C 160 115 140 130 100 130 Z" fill="var(--color-oker)" opacity=".85"/>
+              <path d="M100 122 C 75 122 62 108 62 95 C 62 82 75 75 80 65 C 83 78 90 80 90 70 C 97 80 100 74 100 65 C 108 78 115 80 118 70 C 124 82 138 88 138 100 C 138 114 122 122 100 122 Z" fill="#E8C060"/>
+              <path d="M100 112 C 84 112 76 103 76 95 C 76 87 84 83 88 76 C 90 84 95 85 95 79 C 100 86 104 83 104 77 C 108 85 116 87 116 96 C 116 105 108 112 100 112 Z" fill="#fff" opacity=".5"/>
+              <text x="100" y="143" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Intrinsieke motivatie</text>
             </svg>
           </div>
           <div class="door-back__body">
-            <span class="door-back__tag tag--wrong">Onjuist</span>
-            <div class="door-back__title">Tijdsduur alléén is geen definitie</div>
-            <div class="door-back__text">Langdurige gedragsverandering wordt niet gedefinieerd door een vaste termijn van 12 maanden. Een grens als "12 maanden" klinkt concreet, maar de werkelijke kenmerk is dat nieuw gedrag structureel deel uitmaakt van iemands leefstijl — ongeacht de exacte tijdsduur.</div>
+            <div class="door-back__num">Principe 1</div>
+            <div class="door-back__title">Motivatie staat centraal</div>
+            <div class="door-back__text">Duurzame verandering begint bij intrinsieke motivatie. De coach helpt de cliënt eigen redenen te ontdekken — niet extern opgelegd, maar van binnenuit gedreven.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Door B -->
-    <div class="door-scene" id="scene-b">
+    <!-- ── 2 ── -->
+    <div class="door-scene" id="scene-2">
       <div class="door-wrapper">
-        <div class="door-front" id="door-b" onclick="openDoor('b')">
-          <div class="door-letter">B</div>
-          <div class="door-label">Het gedrag wordt voor altijd volgehouden</div>
-          <div class="door-cta">↩ Klik om te openen</div>
+        <div class="door-front" id="door-2" onclick="toggleDoor('2')">
+          <div class="door-number">2</div>
+          <div class="door-label">Ambivalentie is normaal</div>
+          <div class="door-cta">↩ Open</div>
           <div class="door-knob"></div>
         </div>
-        <div class="door-back" id="back-b">
+        <div class="door-back" id="back-2">
+          <button class="door-close" onclick="closeDoor('2')" title="Sluiten">✕</button>
           <div class="door-back__illus">
-            <!-- Infinity / forever illustration -->
-            <svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg" width="260" height="145">
-              <rect width="260" height="145" fill="#EDE9E0"/>
-              <!-- infinity symbol -->
-              <path d="M 80 72 C 80 50, 110 50, 130 72 C 150 94, 180 94, 180 72 C 180 50, 150 50, 130 72 C 110 94, 80 94, 80 72 Z"
-                    fill="none" stroke="#C8C4B8" stroke-width="10" stroke-linecap="round"/>
-              <!-- cross -->
-              <line x1="55" y1="35" x2="205" y2="110" stroke="#b02828" stroke-width="5" stroke-linecap="round" opacity=".65"/>
-              <line x1="205" y1="35" x2="55" y2="110" stroke="#b02828" stroke-width="5" stroke-linecap="round" opacity=".65"/>
-              <text x="130" y="128" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="11" fill="#5a5040">Nooit "voor altijd" garanderen</text>
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- two arrows opposing -->
+              <path d="M30 75 L90 75" stroke="var(--color-blauw)" stroke-width="5" stroke-linecap="round"/>
+              <polygon points="90,68 105,75 90,82" fill="var(--color-blauw)"/>
+              <path d="M170 75 L110 75" stroke="var(--color-oker-dark)" stroke-width="5" stroke-linecap="round"/>
+              <polygon points="110,68 95,75 110,82" fill="var(--color-oker-dark)"/>
+              <circle cx="100" cy="75" r="12" fill="var(--color-wit)" stroke="var(--color-grijs)" stroke-width="2"/>
+              <text x="100" y="79" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="10" font-weight="700" fill="#5a5040">?</text>
+              <text x="55"  y="60" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="8.5" fill="var(--color-blauw)" font-weight="600">Veranderen</text>
+              <text x="148" y="60" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="8.5" fill="var(--color-oker-dark)" font-weight="600">Blijven</text>
+              <text x="100" y="115" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Beide gevoelens zijn geldig</text>
             </svg>
           </div>
           <div class="door-back__body">
-            <span class="door-back__tag tag--wrong">Onjuist</span>
-            <div class="door-back__title">Terugval hoort erbij</div>
-            <div class="door-back__text">Langdurig volhouden betekent niet dat iemand nooit meer terugvalt. Terugval is een normaal onderdeel van veranderingsprocessen. "Voor altijd" is een onrealistisch en demotiverend criterium — herstel en doorzettingsvermogen na terugval zijn minstens zo belangrijk.</div>
+            <div class="door-back__num">Principe 2</div>
+            <div class="door-back__title">Ambivalentie is normaal</div>
+            <div class="door-back__text">Twijfel en tegenstrijdige gevoelens horen bij elke verandering. De coach erkent ambivalentie zonder oordeel en helpt de cliënt de balans naar de gewenste kant te laten doorslaan.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Door C — CORRECT -->
-    <div class="door-scene" id="scene-c">
+    <!-- ── 3 ── -->
+    <div class="door-scene" id="scene-3">
       <div class="door-wrapper">
-        <div class="door-front" id="door-c" onclick="openDoor('c')">
-          <div class="door-letter">C</div>
-          <div class="door-label">De cliënt ziet veel meer voor- dan nadelen en die visie verandert niet gemakkelijk</div>
-          <div class="door-cta">↩ Klik om te openen</div>
+        <div class="door-front" id="door-3" onclick="toggleDoor('3')">
+          <div class="door-number">3</div>
+          <div class="door-label">Kleine stappen, groot effect</div>
+          <div class="door-cta">↩ Open</div>
           <div class="door-knob"></div>
         </div>
-        <div class="door-back" id="back-c">
+        <div class="door-back" id="back-3">
+          <button class="door-close" onclick="closeDoor('3')" title="Sluiten">✕</button>
           <div class="door-back__illus">
-            <!-- Balance / scale illustration -->
-            <svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg" width="260" height="145">
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#E8C060"/>
-                  <stop offset="100%" style="stop-color:#D4A017"/>
-                </linearGradient>
-              </defs>
-              <rect width="260" height="145" fill="#d8f0e4"/>
-              <!-- pole -->
-              <line x1="130" y1="30" x2="130" y2="115" stroke="#0D1F3C" stroke-width="4" stroke-linecap="round"/>
-              <!-- beam tilted (pro side heavier) -->
-              <line x1="55" y1="60" x2="205" y2="52" stroke="#0D1F3C" stroke-width="4" stroke-linecap="round"/>
-              <!-- left pan (heavy = voordelen) -->
-              <line x1="55" y1="60" x2="55" y2="88" stroke="#0D1F3C" stroke-width="2"/>
-              <ellipse cx="55" cy="92" rx="28" ry="9" fill="url(#goldGrad)" stroke="#A87C0C" stroke-width="1.5"/>
-              <text x="55" y="96" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" font-weight="700" fill="#111">Voordelen</text>
-              <!-- right pan (light = nadelen) -->
-              <line x1="205" y1="52" x2="205" y2="72" stroke="#0D1F3C" stroke-width="2"/>
-              <ellipse cx="205" cy="76" rx="22" ry="7" fill="#EDE9E0" stroke="#C8C4B8" stroke-width="1.5"/>
-              <text x="205" y="80" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Nadelen</text>
-              <!-- checkmark -->
-              <circle cx="210" cy="25" r="16" fill="#2d7a4a"/>
-              <polyline points="203,25 208,31 218,19" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- staircase -->
+              <rect x="20"  y="120" width="30" height="12" rx="3" fill="var(--color-oker-dark)"/>
+              <rect x="50"  y="108" width="30" height="24" rx="3" fill="var(--color-oker)"/>
+              <rect x="80"  y="92"  width="30" height="40" rx="3" fill="var(--color-oker)"/>
+              <rect x="110" y="72"  width="30" height="60" rx="3" fill="var(--color-blauw-light)"/>
+              <rect x="140" y="48"  width="30" height="84" rx="3" fill="var(--color-blauw)"/>
+              <!-- star on top -->
+              <text x="155" y="44" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="18">⭐</text>
+              <text x="100" y="145" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Stap voor stap omhoog</text>
             </svg>
           </div>
           <div class="door-back__body">
-            <span class="door-back__tag tag--correct">✓ Juist antwoord</span>
-            <div class="door-back__title">Stabiele motivatie is de kern</div>
-            <div class="door-back__text">Wanneer iemand de voordelen van nieuw gedrag duurzaam als groter ervaart dan de nadelen — en die overtuiging stevig verankerd is — ontstaat intrinsieke motivatie. Die stabiele kosten-batenbalans is hét kenmerk van langdurige gedragsverandering.</div>
+            <div class="door-back__num">Principe 3</div>
+            <div class="door-back__title">Kleine stappen, groot effect</div>
+            <div class="door-back__text">Gedragsverandering lukt beter met kleine, haalbare stappen. Elk succesje versterkt het zelfvertrouwen en bouwt voort op het vorige. Samen leiden kleine acties tot grote, duurzame verschuivingen.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Door D -->
-    <div class="door-scene" id="scene-d">
+    <!-- ── 4 ── -->
+    <div class="door-scene" id="scene-4">
       <div class="door-wrapper">
-        <div class="door-front" id="door-d" onclick="openDoor('d')">
-          <div class="door-letter">D</div>
-          <div class="door-label">De cliënt vindt het heel gemakkelijk om het gedrag uit te voeren</div>
-          <div class="door-cta">↩ Klik om te openen</div>
+        <div class="door-front" id="door-4" onclick="toggleDoor('4')">
+          <div class="door-number">4</div>
+          <div class="door-label">Zelfeffectiviteit versterken</div>
+          <div class="door-cta">↩ Open</div>
           <div class="door-knob"></div>
         </div>
-        <div class="door-back" id="back-d">
+        <div class="door-back" id="back-4">
+          <button class="door-close" onclick="closeDoor('4')" title="Sluiten">✕</button>
           <div class="door-back__illus">
-            <!-- Easy button / feather illustration -->
-            <svg viewBox="0 0 260 145" xmlns="http://www.w3.org/2000/svg" width="260" height="145">
-              <rect width="260" height="145" fill="#EDE9E0"/>
-              <!-- road with bumps -->
-              <path d="M 30 110 Q 80 70 130 100 Q 180 130 230 80" fill="none" stroke="#C8C4B8" stroke-width="6" stroke-linecap="round"/>
-              <!-- person walking with effort -->
-              <circle cx="100" cy="68" r="10" fill="#0D1F3C"/>
-              <line x1="100" y1="78" x2="100" y2="100" stroke="#0D1F3C" stroke-width="3" stroke-linecap="round"/>
-              <line x1="100" y1="85" x2="88"  cy="97" stroke="#0D1F3C" stroke-width="3" stroke-linecap="round"/>
-              <line x1="100" y1="85" x2="112" y2="97" stroke="#0D1F3C" stroke-width="3" stroke-linecap="round"/>
-              <!-- sweat drops -->
-              <ellipse cx="80" cy="60" rx="4" ry="6" fill="#1E4080" opacity=".5" transform="rotate(-15 80 60)"/>
-              <ellipse cx="72" cy="52" rx="3" ry="4.5" fill="#1E4080" opacity=".35" transform="rotate(-10 72 52)"/>
-              <!-- cross -->
-              <line x1="170" y1="30" x2="230" y2="80" stroke="#b02828" stroke-width="4" stroke-linecap="round" opacity=".6"/>
-              <line x1="230" y1="30" x2="170" y2="80" stroke="#b02828" stroke-width="4" stroke-linecap="round" opacity=".6"/>
-              <text x="130" y="132" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="10" fill="#5a5040">Moeite hoort erbij</text>
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- arm flexing -->
+              <ellipse cx="100" cy="90" rx="22" ry="30" fill="var(--color-blauw)" opacity=".15"/>
+              <path d="M68 100 Q68 65 100 58 Q132 65 132 100 Q130 118 100 122 Q70 118 68 100Z" fill="var(--color-blauw-light)" opacity=".8"/>
+              <path d="M78 88 Q100 60 122 88" fill="none" stroke="var(--color-oker)" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="100" cy="64" r="14" fill="var(--color-oker)" opacity=".9"/>
+              <text x="100" y="68.5" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="12" font-weight="700" fill="var(--color-zwart)">✓</text>
+              <text x="100" y="142" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Ik kan het — en ik doe het</text>
             </svg>
           </div>
           <div class="door-back__body">
-            <span class="door-back__tag tag--wrong">Onjuist</span>
-            <div class="door-back__title">Inspanning is normaal en verwacht</div>
-            <div class="door-back__text">Gedragsverandering is zelden moeiteloos. Het vraagt aanhoudende inspanning, zelfregulatie en soms het overwinnen van tegenslagen. "Gemakkelijk" is eerder een uitzondering dan een regel. Langdurige verandering kenmerkt zich juist door het volhouden ondanks moeilijkheden.</div>
+            <div class="door-back__num">Principe 4</div>
+            <div class="door-back__title">Zelfeffectiviteit versterken</div>
+            <div class="door-back__text">De overtuiging "ik kan dit" is een krachtige voorspeller van succes. De coach vergroot het geloof in eigen kunnen door successen te benoemen, obstakels te herkaderen en vertrouwen actief te voeden.</div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- ── 5 ── -->
+    <div class="door-scene" id="scene-5">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-5" onclick="toggleDoor('5')">
+          <div class="door-number">5</div>
+          <div class="door-label">Terugval als leermomment</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-5">
+          <button class="door-close" onclick="closeDoor('5')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- spiral / loop upward -->
+              <path d="M100 130 C 55 130 30 110 30 88 C 30 66 55 55 80 62 C 105 69 115 88 100 98 C 85 108 65 100 68 88 C 71 76 85 72 95 78" fill="none" stroke="var(--color-blauw)" stroke-width="4" stroke-linecap="round"/>
+              <!-- arrow up -->
+              <path d="M95 78 L100 58" stroke="var(--color-oker)" stroke-width="4" stroke-linecap="round"/>
+              <polygon points="100,50 94,66 106,66" fill="var(--color-oker)"/>
+              <circle cx="100" cy="46" r="10" fill="var(--color-oker)" opacity=".9"/>
+              <text x="100" y="50" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="10" font-weight="700" fill="var(--color-zwart)">↑</text>
+              <text x="100" y="145" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Vallen en opstaan leidt omhoog</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 5</div>
+            <div class="door-back__title">Terugval als leermomment</div>
+            <div class="door-back__text">Terugval is geen falen — het is informatie. De coach helpt de cliënt patronen te herkennen, triggers te begrijpen en met meer kennis een nieuwe start te maken. Veerkracht groeit door vallen én opstaan.</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Reset -->
+    <!-- ── 6 ── -->
+    <div class="door-scene" id="scene-6">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-6" onclick="toggleDoor('6')">
+          <div class="door-number">6</div>
+          <div class="door-label">De omgeving als hefboom</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-6">
+          <button class="door-close" onclick="closeDoor('6')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- house/home -->
+              <polygon points="100,20 160,65 40,65" fill="var(--color-blauw)" opacity=".9"/>
+              <rect x="50" y="65" width="100" height="65" rx="4" fill="var(--color-blauw-light)" opacity=".85"/>
+              <rect x="82" y="95" width="36" height="35" rx="4" fill="var(--color-oker-dark)" opacity=".9"/>
+              <!-- people inside / windows -->
+              <rect x="60" y="75" width="20" height="16" rx="3" fill="var(--color-wit)" opacity=".7"/>
+              <rect x="120" y="75" width="20" height="16" rx="3" fill="var(--color-wit)" opacity=".7"/>
+              <!-- green ring outside -->
+              <circle cx="100" cy="84" r="58" fill="none" stroke="#2d7a4a" stroke-width="3" stroke-dasharray="6 5" opacity=".5"/>
+              <text x="100" y="145" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Thuis, werk, sociaal netwerk</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 6</div>
+            <div class="door-back__title">De omgeving als hefboom</div>
+            <div class="door-back__text">Gedrag speelt zich altijd af in een context. De coach helpt de cliënt de sociale en fysieke omgeving zo in te richten dat gezond gedrag de gemakkelijkste keuze wordt.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 7 ── -->
+    <div class="door-scene" id="scene-7">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-7" onclick="toggleDoor('7')">
+          <div class="door-number">7</div>
+          <div class="door-label">Gewoonten & automatisme</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-7">
+          <button class="door-close" onclick="closeDoor('7')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- gear / cog -->
+              <circle cx="100" cy="78" r="28" fill="none" stroke="var(--color-blauw)" stroke-width="7"/>
+              <circle cx="100" cy="78" r="13" fill="var(--color-oker)" opacity=".9"/>
+              <!-- cog teeth -->
+              <rect x="95" y="42" width="10" height="14" rx="3" fill="var(--color-blauw)"/>
+              <rect x="95" y="100" width="10" height="14" rx="3" fill="var(--color-blauw)"/>
+              <rect x="58"  y="73" width="14" height="10" rx="3" fill="var(--color-blauw)"/>
+              <rect x="128" y="73" width="14" height="10" rx="3" fill="var(--color-blauw)"/>
+              <rect x="68"  y="51" width="14" height="10" rx="3" fill="var(--color-blauw)" transform="rotate(45 75 56)"/>
+              <rect x="118" y="51" width="14" height="10" rx="3" fill="var(--color-blauw)" transform="rotate(-45 125 56)"/>
+              <rect x="68"  y="91" width="14" height="10" rx="3" fill="var(--color-blauw)" transform="rotate(-45 75 96)"/>
+              <rect x="118" y="91" width="14" height="10" rx="3" fill="var(--color-blauw)" transform="rotate(45 125 96)"/>
+              <text x="100" y="82" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" font-weight="700" fill="var(--color-zwart)">auto</text>
+              <text x="100" y="143" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Gedrag wordt automatisch</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 7</div>
+            <div class="door-back__title">Gewoonten & automatisme</div>
+            <div class="door-back__text">Langdurige verandering vereist dat nieuw gedrag een gewoonte wordt — iets wat zonder na te denken gedaan wordt. De coach helpt cue-routine-reward patronen te herkennen en te herprogrammeren.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 8 ── -->
+    <div class="door-scene" id="scene-8">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-8" onclick="toggleDoor('8')">
+          <div class="door-number">8</div>
+          <div class="door-label">Emoties & zelfregulatie</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-8">
+          <button class="door-close" onclick="closeDoor('8')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- brain outline -->
+              <path d="M60 100 C 55 120 75 135 95 128 C 100 130 105 130 110 128 C 130 135 148 118 142 100 C 155 95 160 80 150 68 C 155 55 145 40 132 42 C 128 32 115 28 105 35 C 100 30 92 30 88 36 C 75 30 62 42 66 55 C 55 65 52 82 60 100 Z" fill="var(--color-blauw-light)" opacity=".6"/>
+              <!-- heart inside -->
+              <path d="M100 105 C 90 95 78 90 78 80 C 78 72 85 67 92 72 C 96 74 100 80 100 80 C 100 80 104 74 108 72 C 115 67 122 72 122 80 C 122 90 110 95 100 105 Z" fill="var(--color-oker)" opacity=".85"/>
+              <text x="100" y="143" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Hoofd én hart in balans</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 8</div>
+            <div class="door-back__title">Emoties & zelfregulatie</div>
+            <div class="door-back__text">Stress, vermoeidheid en negatieve emoties zijn de meest voorkomende triggers voor terugval. De coach werkt aan zelfbewustzijn en copingstrategieën zodat de cliënt ook in moeilijke momenten regie houdt.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 9 ── -->
+    <div class="door-scene" id="scene-9">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-9" onclick="toggleDoor('9')">
+          <div class="door-number">9</div>
+          <div class="door-label">Sociale steun benutten</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-9">
+          <button class="door-close" onclick="closeDoor('9')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- three people holding hands -->
+              <circle cx="60"  cy="55" r="14" fill="var(--color-blauw)" opacity=".8"/>
+              <circle cx="100" cy="48" r="16" fill="var(--color-oker)" opacity=".9"/>
+              <circle cx="140" cy="55" r="14" fill="var(--color-blauw-light)" opacity=".8"/>
+              <!-- body lines -->
+              <line x1="60"  y1="69" x2="60"  y2="105" stroke="var(--color-blauw)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+              <line x1="100" y1="64" x2="100" y2="110" stroke="var(--color-oker-dark)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="140" y1="69" x2="140" y2="105" stroke="var(--color-blauw-light)" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+              <!-- hands joined -->
+              <line x1="60" y1="86" x2="100" y2="90" stroke="var(--color-blauw)" stroke-width="3.5" stroke-linecap="round" opacity=".7"/>
+              <line x1="100" y1="90" x2="140" y2="86" stroke="var(--color-oker-dark)" stroke-width="3.5" stroke-linecap="round"/>
+              <text x="100" y="130" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Samen sta je sterker</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 9</div>
+            <div class="door-back__title">Sociale steun benutten</div>
+            <div class="door-back__text">Mensen veranderen zelden alleen. De coach helpt de cliënt een netwerk van steun te activeren — partner, vrienden of een groep — om verandering te verankeren in de sociale realiteit.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 10 ── -->
+    <div class="door-scene" id="scene-10">
+      <div class="door-wrapper">
+        <div class="door-front" id="door-10" onclick="toggleDoor('10')">
+          <div class="door-number">10</div>
+          <div class="door-label">Identiteit & waarden als anker</div>
+          <div class="door-cta">↩ Open</div>
+          <div class="door-knob"></div>
+        </div>
+        <div class="door-back" id="back-10">
+          <button class="door-close" onclick="closeDoor('10')" title="Sluiten">✕</button>
+          <div class="door-back__illus">
+            <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="150" fill="#EDE9E0"/>
+              <!-- anchor -->
+              <circle cx="100" cy="45" r="14" fill="none" stroke="var(--color-blauw)" stroke-width="5"/>
+              <line x1="100" y1="58" x2="100" y2="120" stroke="var(--color-blauw)" stroke-width="5" stroke-linecap="round"/>
+              <path d="M68 100 Q100 120 132 100" fill="none" stroke="var(--color-blauw)" stroke-width="5" stroke-linecap="round"/>
+              <line x1="68"  y1="100" x2="68"  y2="112" stroke="var(--color-blauw)" stroke-width="4" stroke-linecap="round"/>
+              <line x1="132" y1="100" x2="132" y2="112" stroke="var(--color-blauw)" stroke-width="4" stroke-linecap="round"/>
+              <!-- oker star in circle -->
+              <circle cx="100" cy="45" r="8" fill="var(--color-oker)" opacity=".9"/>
+              <text x="100" y="49" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="10" font-weight="700" fill="var(--color-zwart)">★</text>
+              <text x="100" y="143" text-anchor="middle" font-family="'Source Sans 3',sans-serif" font-size="9" fill="#5a5040">Wie ben ik? Wat vind ik echt belangrijk?</text>
+            </svg>
+          </div>
+          <div class="door-back__body">
+            <div class="door-back__num">Principe 10</div>
+            <div class="door-back__title">Identiteit & waarden als anker</div>
+            <div class="door-back__text">De diepste gedragsverandering raakt aan wie iemand wil zijn. Wanneer nieuw gedrag verbonden is met kernwaarden en identiteit — "ik ben iemand die beweegt" — wordt het een vanzelfsprekend onderdeel van het leven.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /doors-grid -->
+
   <div class="reset-wrap">
-    <button class="btn-reset" onclick="resetAll()">↺ Opnieuw proberen</button>
+    <button class="btn-reset" onclick="resetAll()">↺ Alle deuren sluiten</button>
   </div>
-
-  <!-- Toast -->
-  <div class="toast" id="toast"></div>
 
   <script>
-    const CORRECT = 'c';
+    function toggleDoor(id) {
+      const front = document.getElementById('door-' + id);
+      if (front.classList.contains('is-open')) {
+        closeDoor(id);
+      } else {
+        openDoor(id);
+      }
+    }
 
     function openDoor(id) {
       const front = document.getElementById('door-' + id);
       const back  = document.getElementById('back-' + id);
-      const scene = document.getElementById('scene-' + id);
-
-      if (front.classList.contains('is-open')) return;
-
       front.classList.add('is-open');
-
-      setTimeout(() => {
-        back.classList.add('is-visible');
-      }, 400);
-
-      const isCorrect = id === CORRECT;
-      scene.classList.add(isCorrect ? 'correct' : 'wrong');
-
-      showToast(isCorrect
-        ? '🎉 Juist! Goed gedaan!'
-        : '✗ Helaas, probeer een andere deur.');
+      setTimeout(() => back.classList.add('is-visible'), 400);
     }
 
-    function showToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2800);
+    function closeDoor(id) {
+      const front = document.getElementById('door-' + id);
+      const back  = document.getElementById('back-' + id);
+      back.classList.remove('is-visible');
+      setTimeout(() => front.classList.remove('is-open'), 300);
     }
 
     function resetAll() {
-      ['a','b','c','d'].forEach(id => {
-        document.getElementById('door-' + id).classList.remove('is-open');
-        document.getElementById('back-' + id).classList.remove('is-visible');
-        document.getElementById('scene-' + id).classList.remove('correct', 'wrong');
-      });
+      for (let i = 1; i <= 10; i++) {
+        closeDoor(String(i));
+      }
     }
   </script>
 
